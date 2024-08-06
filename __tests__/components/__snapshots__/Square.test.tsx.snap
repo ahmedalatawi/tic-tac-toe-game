@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Square /> renders correctly 1`] = `
+<View
+  accessibilityState={
+    {
+      "disabled": false,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "height": 76,
+      "justifyContent": "center",
+      "width": 76,
+    }
+  }
+  testID="squareTestId"
+>
+  <Text
+    style={
+      {
+        "fontSize": 40,
+      }
+    }
+  >
+    X
+  </Text>
+</View>
+`;
