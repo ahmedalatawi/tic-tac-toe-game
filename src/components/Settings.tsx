@@ -1,4 +1,10 @@
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  Platform,
+} from "react-native";
 import { BOARD_SIZES, PLAYER_TYPES } from "../constants/common";
 import React, { useEffect, useState } from "react";
 import { Picker } from "@react-native-picker/picker";
@@ -104,7 +110,7 @@ function Settings({ onStartGame }: Props) {
           Select player "X" and "O" to start the game
         </Text>
         <View style={styles.pickersContainer}>
-          <View style={styles.pickerContainer}>
+          <View style={[styles.pickerContainer, getAndroidPickerStyles()]}>
             <Picker<PlayerTypes | null>
               style={styles.picker}
               mode="dropdown"
@@ -113,16 +119,18 @@ function Settings({ onStartGame }: Props) {
                 handlePlayerDropdownPress(itemValue, "playerX")
               }
             >
-              <Picker.Item
-                value={null}
-                label="-- Player X --"
-                style={styles.pickerItem}
-              />
+              {Platform.OS === "android" && (
+                <Picker.Item
+                  value={null}
+                  label="-- Player X --"
+                  style={styles.pickerItem}
+                />
+              )}
               <Picker.Item label="User" value={PLAYER_TYPES.user} />
               <Picker.Item label="Computer" value={PLAYER_TYPES.computer} />
             </Picker>
           </View>
-          <View style={styles.pickerContainer}>
+          <View style={[styles.pickerContainer, getAndroidPickerStyles()]}>
             <Picker<PlayerTypes | null>
               style={styles.picker}
               mode="dropdown"
@@ -131,11 +139,13 @@ function Settings({ onStartGame }: Props) {
                 handlePlayerDropdownPress(itemValue, "playerO")
               }
             >
-              <Picker.Item
-                value={null}
-                label="-- Player O --"
-                style={styles.pickerItem}
-              />
+              {Platform.OS === "android" && (
+                <Picker.Item
+                  value={null}
+                  label="-- Player O --"
+                  style={styles.pickerItem}
+                />
+              )}
               <Picker.Item label="User" value={PLAYER_TYPES.user} />
               <Picker.Item label="Computer" value={PLAYER_TYPES.computer} />
             </Picker>
@@ -163,6 +173,13 @@ function Settings({ onStartGame }: Props) {
   );
 }
 
+const getAndroidPickerStyles = () =>
+  Platform.OS === "android" && {
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: Colors.gray,
+  };
+
 const styles = StyleSheet.create({
   container: {
     rowGap: 32,
@@ -178,7 +195,7 @@ const styles = StyleSheet.create({
   },
   selectPlayersText: {
     fontSize: 16,
-    paddingBottom: 10,
+    paddingBottom: Platform.OS === "ios" ? 70 : 10,
     paddingTop: 20,
   },
   selectorBtn: {
@@ -200,9 +217,6 @@ const styles = StyleSheet.create({
     height: 40,
     flexDirection: "row",
     alignItems: "center",
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: Colors.gray,
     width: "50%",
   },
   picker: {
@@ -216,7 +230,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 20,
-    padding: 10,
+    padding: 20,
     gap: 5,
   },
   radioBtnText: {
@@ -226,10 +240,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 15,
+    paddingTop: 8,
   },
   checkboxContainer: {
     marginHorizontal: 16,
-    marginVertical: 10,
+    marginVertical: 20,
     flexDirection: "row",
     alignItems: "center",
   },

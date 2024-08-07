@@ -1,6 +1,8 @@
 # Tic Tac Toe Game
 
-This project is built using React Native, Expo and Typescript, and it was bootstrapped with [Expo CLI](https://docs.expo.dev/get-started/create-a-new-app/).
+This project is built with React Native, Expo and Typescript, and it was bootstrapped with [Expo CLI](https://docs.expo.dev/get-started/create-a-new-app/).
+
+![](./images/tic_tac_toe_img.gif)
 
 # Run App:
 
