@@ -4,7 +4,15 @@ This project is built with React Native, Expo and Typescript, and it was bootstr
 
 ![](./images/tic_tac_toe_img.gif)
 
-# Run App:
+Tic Tac Toe is a simple game that provides the following options for player **_X_** and **_O_**:
+
+- **_User .vs Computer_** - this is the default option where you, the user, play against the computer
+- **_User .vs User_** - you play against yourself
+- **_Computer .vs Computer_** - the computer plays against itself
+
+You can also make the computer smart (unbeatable) by checking the "Incorporate AI" option.
+
+## Run app
 
 ### `yarn install`
 
