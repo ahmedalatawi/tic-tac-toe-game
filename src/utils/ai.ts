@@ -41,29 +41,29 @@ function isMovesLeft(board: GameBoard, boardSize: number) {
 function evaluate(b: GameBoard, human: number, ai: number, boardSize: number) {
   // Checking for Rows for X or O victory.
   for (let row = 0; row < boardSize; row++) {
-    if (b[row][0] == b[row][1] && b[row][1] == b[row][2]) {
-      if (b[row][0] == ai) return +10;
-      else if (b[row][0] == human) return -10;
+    if (b[row][0] === b[row][1] && b[row][1] === b[row][2]) {
+      if (b[row][0] === ai) return +10;
+      else if (b[row][0] === human) return -10;
     }
   }
 
   // Checking for Columns for X or O victory.
   for (let col = 0; col < boardSize; col++) {
-    if (b[0][col] == b[1][col] && b[1][col] == b[2][col]) {
-      if (b[0][col] == ai) return +10;
-      else if (b[0][col] == human) return -10;
+    if (b[0][col] === b[1][col] && b[1][col] === b[2][col]) {
+      if (b[0][col] === ai) return +10;
+      else if (b[0][col] === human) return -10;
     }
   }
 
   // Checking for Diagonals for X or O victory.
-  if (b[0][0] == b[1][1] && b[1][1] == b[2][2]) {
-    if (b[0][0] == ai) return +10;
-    else if (b[0][0] == human) return -10;
+  if (b[0][0] === b[1][1] && b[1][1] === b[2][2]) {
+    if (b[0][0] === ai) return +10;
+    else if (b[0][0] === human) return -10;
   }
 
-  if (b[0][2] == b[1][1] && b[1][1] == b[2][0]) {
-    if (b[0][2] == ai) return +10;
-    else if (b[0][2] == human) return -10;
+  if (b[0][2] === b[1][1] && b[1][1] === b[2][0]) {
+    if (b[0][2] === ai) return +10;
+    else if (b[0][2] === human) return -10;
   }
 
   // Else if none of them have
@@ -90,21 +90,21 @@ function minimax(
   isMax: boolean,
   human: number,
   ai: number,
-  boardSize: number
+  boardSize: number,
 ) {
   let score = evaluate(board, human, ai, boardSize);
 
   // If Maximizer has won the game
   // return his/her evaluated score
-  if (score == 10) return score;
+  if (score === 10) return score;
 
   // If Minimizer has won the game
   // return his/her evaluated score
-  if (score == -10) return score;
+  if (score === -10) return score;
 
   // If there are no more moves and
   // no winner then it is a tie
-  if (isMovesLeft(board, boardSize) == false) return 0;
+  if (isMovesLeft(board, boardSize) === false) return 0;
 
   // If this maximizer's move
   if (isMax) {
@@ -122,7 +122,7 @@ function minimax(
           // and choose the maximum value
           best = Math.max(
             best,
-            minimax(board, depth + 1, !isMax, human, ai, boardSize)
+            minimax(board, depth + 1, !isMax, human, ai, boardSize),
           );
 
           // Undo the move
@@ -149,7 +149,7 @@ function minimax(
           // choose the minimum value
           best = Math.min(
             best,
-            minimax(board, depth + 1, !isMax, human, ai, boardSize)
+            minimax(board, depth + 1, !isMax, human, ai, boardSize),
           );
 
           // Undo the move
@@ -166,7 +166,7 @@ function minimax(
 export function getAiMove(
   board: GameBoard,
   settings: GameSettings | null,
-  currentPlayer: number | null
+  currentPlayer: number | null,
 ) {
   let human = PLAYER_X,
     ai = PLAYER_O;

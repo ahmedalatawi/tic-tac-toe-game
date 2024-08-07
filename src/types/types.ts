@@ -1,5 +1,5 @@
 export type PlayerTypes = "user" | "computer";
-export type GameBoard = Array<number | null>[];
+export type GameBoard = (number | null)[][];
 export type GameSettings = {
   playerX: PlayerTypes | null;
   playerO: PlayerTypes | null;

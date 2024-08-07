@@ -11,7 +11,8 @@
     "test": "jest --watch --coverage=false",
     "testDebug": "jest -o --watch --coverage=false",
     "testFinal": "jest",
-    "updateSnapshots": "jest -u --coverage=false"
+    "updateSnapshots": "jest -u --coverage=false",
+    "lint": "eslint ."
   },
   "jest": {
     "preset": "jest-expo",
@@ -36,8 +37,13 @@
     "@types/jest": "^29.5.12",
     "@types/react": "~18.2.45",
     "@types/react-test-renderer": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-expo": "^7.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "jest": "^29.7.0",
     "jest-expo": "^51.0.2",
+    "prettier": "^3.3.3",
     "react-test-renderer": "18.2.0",
     "typescript": "^5.1.3"
   },

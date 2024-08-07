@@ -38,7 +38,7 @@ describe("<Board />", () => {
   test("prevent pressing when board is disabled", async () => {
     const onPressCallback = jest.fn();
     render(
-      <Board {...mockProps} disabled={true} onPressUser={onPressCallback} />
+      <Board {...mockProps} disabled={true} onPressUser={onPressCallback} />,
     );
 
     const firstSquare = screen.getByTestId("00");
@@ -58,7 +58,7 @@ describe("<Board />", () => {
     const onPressCallback = jest.fn();
 
     render(
-      <Board {...mockProps} board={boardCopy} onPressUser={onPressCallback} />
+      <Board {...mockProps} board={boardCopy} onPressUser={onPressCallback} />,
     );
 
     //Player X should exist on the board
@@ -81,7 +81,7 @@ describe("<Board />", () => {
         {...mockProps}
         gameState={GAME_STATES.ended}
         onPressUser={onPressCallback}
-      />
+      />,
     );
 
     const square = screen.getByTestId("00");

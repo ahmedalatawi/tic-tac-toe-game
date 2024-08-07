@@ -253,12 +253,12 @@ export const getUserValue = (settings: GameSettings) =>
   isUserVsUser(settings)
     ? PLAYER_X
     : settings.playerX === PLAYER_TYPES.user
-    ? PLAYER_X
-    : PLAYER_O;
+      ? PLAYER_X
+      : PLAYER_O;
 
 export const getComputerValue = (settings: GameSettings) =>
   isComputerVsComputer(settings)
     ? PLAYER_X
     : settings.playerO === PLAYER_TYPES.computer
-    ? PLAYER_O
-    : PLAYER_X;
+      ? PLAYER_O
+      : PLAYER_X;

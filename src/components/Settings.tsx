@@ -45,7 +45,7 @@ function Settings({ onStartGame }: Props) {
 
   const handlePlayerDropdownPress = (
     value: PlayerTypes | null,
-    key: GameSettingsKeys
+    key: GameSettingsKeys,
   ) => {
     setSettings((currentSettings) => ({
       ...currentSettings,

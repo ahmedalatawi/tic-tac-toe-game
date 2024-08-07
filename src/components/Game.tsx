@@ -49,7 +49,7 @@ function Game() {
           return boardCopy;
         });
     },
-    [gameState]
+    [gameState],
   );
 
   //This function handles the user's interaction on the board
@@ -129,7 +129,7 @@ function Game() {
           computerMove();
         },
         // Give it more time when it's a computer .vs computer
-        players.user ? 500 : 1200
+        players.user ? 500 : 1200,
       );
     }
     return () => {
@@ -164,14 +164,14 @@ function Game() {
       playerStateInfo = winner
         ? winner
         : currentPlayer === PLAYER_X
-        ? "Player O's turn"
-        : "Player X's turn";
+          ? "Player O's turn"
+          : "Player X's turn";
     } else {
       playerStateInfo = winner
         ? winner
         : nextMove === PLAYER_X
-        ? "Player X's turn"
-        : "Player O's turn";
+          ? "Player X's turn"
+          : "Player O's turn";
     }
 
     return playerStateInfo;
