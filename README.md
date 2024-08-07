@@ -1,5 +1,7 @@
 # Tic Tac Toe Game
 
+![](https://github.com/AhmedAlatawi/tic-tac-toe-game/actions/workflows/main.yml/badge.svg)
+
 This project is built with React Native, Expo and Typescript, and it was bootstrapped with [Expo CLI](https://docs.expo.dev/get-started/create-a-new-app/).
 
 ![](./images/tic_tac_toe_img.gif)
@@ -35,3 +37,7 @@ you can open iOS, Android, or web from here, or run them directly with the comma
 to run all tests in watch mode: `yarn test`
 
 to run all tests just once: `yarn testFinal`
+
+### Author :books:
+
+[Ahmed Alatawi](https://github.com/AhmedAlatawi)
