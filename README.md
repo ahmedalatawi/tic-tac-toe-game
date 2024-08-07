@@ -12,6 +12,8 @@ Tic Tac Toe is a simple game that provides the following options for player **_X
 
 You can also make the computer smart (unbeatable) by checking the "Incorporate AI" option.
 
+### [Snack demo](https://snack.expo.dev/@aalat001/github.com-ahmedalatawi-tic-tac-toe-game) :movie_camera:
+
 ## Run app
 
 ### `yarn install`
