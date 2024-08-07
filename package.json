@@ -21,6 +21,9 @@
     ],
     "modulePathIgnorePatterns": [
       "__mocks__"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.ts"
     ]
   },
   "dependencies": {
