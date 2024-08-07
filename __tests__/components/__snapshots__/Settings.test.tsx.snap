@@ -32,7 +32,7 @@ exports[`<Settings /> renders correctly 1`] = `
             "flexDirection": "row",
             "gap": 5,
             "justifyContent": "center",
-            "padding": 10,
+            "padding": 20,
             "paddingVertical": 20,
           }
         }
@@ -107,7 +107,7 @@ exports[`<Settings /> renders correctly 1`] = `
             "flexDirection": "row",
             "gap": 5,
             "justifyContent": "center",
-            "padding": 10,
+            "padding": 20,
             "paddingVertical": 20,
           }
         }
@@ -171,7 +171,7 @@ exports[`<Settings /> renders correctly 1`] = `
             "flexDirection": "row",
             "gap": 5,
             "justifyContent": "center",
-            "padding": 10,
+            "padding": 20,
             "paddingVertical": 20,
           }
         }
@@ -235,7 +235,7 @@ exports[`<Settings /> renders correctly 1`] = `
           "alignItems": "center",
           "flexDirection": "row",
           "marginHorizontal": 16,
-          "marginVertical": 10,
+          "marginVertical": 20,
         }
       }
     >
@@ -304,7 +304,7 @@ exports[`<Settings /> renders correctly 1`] = `
       style={
         {
           "fontSize": 16,
-          "paddingBottom": 10,
+          "paddingBottom": 70,
           "paddingTop": 20,
         }
       }
@@ -321,15 +321,15 @@ exports[`<Settings /> renders correctly 1`] = `
     >
       <View
         style={
-          {
-            "alignItems": "center",
-            "borderColor": "#a9a9a9",
-            "borderRadius": 10,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 40,
-            "width": "50%",
-          }
+          [
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "height": 40,
+              "width": "50%",
+            },
+            false,
+          ]
         }
       >
         <View
@@ -343,11 +343,56 @@ exports[`<Settings /> renders correctly 1`] = `
             items={
               [
                 {
-                  "label": "-- Player X --",
+                  "label": "User",
                   "testID": undefined,
                   "textColor": undefined,
-                  "value": "null",
+                  "value": "user",
                 },
+                {
+                  "label": "Computer",
+                  "testID": undefined,
+                  "textColor": undefined,
+                  "value": "computer",
+                },
+              ]
+            }
+            numberOfLines={1}
+            onChange={[Function]}
+            selectedIndex={0}
+            style={
+              [
+                {
+                  "height": 216,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "height": 40,
+              "width": "50%",
+            },
+            false,
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "width": "100%",
+            }
+          }
+        >
+          <RNCPicker
+            items={
+              [
                 {
                   "label": "User",
                   "testID": undefined,
@@ -376,63 +421,6 @@ exports[`<Settings /> renders correctly 1`] = `
           />
         </View>
       </View>
-      <View
-        style={
-          {
-            "alignItems": "center",
-            "borderColor": "#a9a9a9",
-            "borderRadius": 10,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 40,
-            "width": "50%",
-          }
-        }
-      >
-        <View
-          style={
-            {
-              "width": "100%",
-            }
-          }
-        >
-          <RNCPicker
-            items={
-              [
-                {
-                  "label": "-- Player O --",
-                  "testID": undefined,
-                  "textColor": undefined,
-                  "value": "null",
-                },
-                {
-                  "label": "User",
-                  "testID": undefined,
-                  "textColor": undefined,
-                  "value": "user",
-                },
-                {
-                  "label": "Computer",
-                  "testID": undefined,
-                  "textColor": undefined,
-                  "value": "computer",
-                },
-              ]
-            }
-            numberOfLines={1}
-            onChange={[Function]}
-            selectedIndex={2}
-            style={
-              [
-                {
-                  "height": 216,
-                },
-                undefined,
-              ]
-            }
-          />
-        </View>
-      </View>
     </View>
   </View>
   <View
@@ -441,6 +429,7 @@ exports[`<Settings /> renders correctly 1`] = `
         "alignItems": "center",
         "justifyContent": "center",
         "paddingHorizontal": 15,
+        "paddingTop": 8,
       }
     }
   >
